@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+<!--    <div class="all-products" >-->
+      <div class="col-3 all-products" *ngFor="let product of products">
+        <mat-card class="products-card">
+          <img class = "product-image" [src]="product.imagePath" [alt]="product.name">
+          <mat-card-content>
+            <p>
+              {{product.name}}
+            </p>
+            <p>
+              {{product.price}}
+            </p>
+            <p>
+              {{product.condition}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+<!--    </div>-->
+  </div>
+</div>
