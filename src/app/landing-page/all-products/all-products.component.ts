@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductModel} from '../../models/productModel';
+import {ProductService} from '../../services/product.service';
 
 @Component({
   selector: 'app-all-products',
@@ -8,42 +9,13 @@ import {ProductModel} from '../../models/productModel';
 })
 export class AllProductsComponent implements OnInit {
   products: ProductModel[];
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.products = [{
-      id: '100d',
-      name: 'name1',
-      price: 20000,
-      imagePath: '/assets/image-assets/headphone.jpg',
-      category: 'electronics',
-      condition: 'new'
-    },
-      {
-        id: '100d',
-        name: 'name1',
-        price: 20000,
-        imagePath: '/assets/image-assets/headphone.jpg',
-        category: 'electronics',
-        condition: 'new'
-      },
-      {
-        id: '100d',
-        name: 'name1',
-        price: 20000,
-        imagePath: '/assets/image-assets/headphone.jpg',
-        category: 'electronics',
-        condition: 'new'
-      },
-      {
-        id: '100d',
-        name: 'name1',
-        price: 20000,
-        imagePath: '/assets/image-assets/headphone.jpg',
-        category: 'electronics',
-        condition: 'new'
-      },
-    ];
+    this.productService.getAllProducts();
+    this.productService.getProductsSubject().subscribe((data) => {
+      this.products = data;
+    });
   }
 
 }

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
+  amount = '2';
   constructor() { }
 
   ngOnInit() {
