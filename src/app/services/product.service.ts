@@ -9,11 +9,11 @@ import {Observable, Subject} from 'rxjs';
 export class ProductService {
   private products: ProductModel[] = [];
   private productSubject = new Subject<ProductModel[]>();
-
+  private url = 'http://localhost:8080/products';
   constructor(private http: HttpClient) { }
 
   getAllProducts() {
-    this.http.get<{message: string, products: ProductModel[]}>('http://localhost:8080/products').subscribe(result => {
+    this.http.get<{message: string, products: ProductModel[]}>(this.url).subscribe(result => {
       this.products = result.products;
       this.productSubject.next([...this.products]);
     });
@@ -21,5 +21,17 @@ export class ProductService {
 
   getProductsSubject(): Observable<ProductModel[]> {
     return this.productSubject;
+  }
+
+  createProduct(name: string, price: number, category: string, condition: string) {
+    const product = {
+      name,
+      price,
+      category,
+      condition
+    };
+    this.http.post(this.url, product).subscribe(result => {
+      console.log('post success');
+    });
   }
 }

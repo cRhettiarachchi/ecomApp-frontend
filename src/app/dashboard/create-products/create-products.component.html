@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="col-5 mx-auto">
+      <form [formGroup]="form" (submit)="onSavePost()" class="example-form">
+        <mat-form-field class="example-full-width">
+          <input formControlName="name" matInput placeholder="Product Name">
+          <mat-error *ngIf="form.get('name').invalid">Please insert a valid name</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input formControlName="price" matInput placeholder="Price">
+          <mat-error *ngIf="form.get('price').invalid">Please enter price</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input formControlName="category" matInput placeholder="Type">
+          <mat-error *ngIf="form.get('category').invalid">Please enter the category</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Condition</mat-label>
+          <mat-select formControlName="condition" value="16px">
+            <mat-option value="Used">Used</mat-option>
+            <mat-option value="Brand New">Brand New</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="image-pick">
+          <button mat-stroked-button color="primary" type = "button" (click)="imagePick.click()">Add Image</button>
+          <input type = "file" #imagePick>
+        </div>
+        <button type = "submit" mat-raised-button color="primary">button</button>
+      </form>
+  </div>
+</div>

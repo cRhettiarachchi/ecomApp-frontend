@@ -1,0 +1,15 @@
+mat-form-field {
+  width: 100%;
+}
+
+form {
+  margin-top: 25%;
+}
+
+.image-pick {
+  margin-bottom: 3%;
+}
+
+input[type="file"] {
+  visibility: hidden;
+}
