@@ -13,3 +13,7 @@ form {
 input[type="file"] {
   visibility: hidden;
 }
+
+.imagePreview {
+  width: 50px !important;
+}

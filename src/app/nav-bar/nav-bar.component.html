@@ -1,8 +1,11 @@
 <mat-toolbar>
   <a>ecomApp</a>
-  <mat-icon class = "border-right-0" [matBadge]="amount" matBadgeColor="accent">shopping_cart</mat-icon>
+  <span class="example-spacer"></span>
+  <mat-icon class = "navbar-items" [matBadge]="amount" matBadgeColor="accent">shopping_cart</mat-icon>
   <!-- Include text description of the icon's meaning for screen-readers -->
   <span class="cdk-visually-hidden">
       Example with a home icon with overlaid badge showing the number 15
     </span>
+  <a class = "navbar-items" [routerLinkActiveOptions]="{exact: true}" routerLink="/" routerLinkActive="using">Home</a>
+  <a class = "navbar-items" routerLink="/dashboard" routerLinkActive="using">Dashboard</a>
 </mat-toolbar>

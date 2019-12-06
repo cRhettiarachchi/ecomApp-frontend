@@ -13,7 +13,9 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getAllProducts() {
-    this.http.get<{message: string, products: ProductModel[]}>(this.url).subscribe(result => {
+    this.http.get<{message: string, products: any[]}>(this.url)
+      .pipe()
+      .subscribe(result => {
       this.products = result.products;
       this.productSubject.next([...this.products]);
     });
@@ -23,13 +25,13 @@ export class ProductService {
     return this.productSubject;
   }
 
-  createProduct(name: string, price: number, category: string, condition: string) {
-    const product = {
-      name,
-      price,
-      category,
-      condition
-    };
+  createProduct(name: string, price: number, category: string, condition: string, image: File) {
+    const product = new FormData();
+    product.append('name', name);
+    product.append('price', ((price as unknown) as string));
+    product.append('category', category);
+    product.append('condition', condition);
+    product.append('image', image, name);
     this.http.post(this.url, product).subscribe(result => {
       console.log('post success');
     });

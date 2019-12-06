@@ -3,3 +3,23 @@
   color: white;
 }
 
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  font-size: 110%;
+}
+
+.navbar-items {
+  margin-right: 10px;
+}
+
+.using {
+  font-size: 110%;
+}

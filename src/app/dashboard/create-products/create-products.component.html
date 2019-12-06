@@ -7,7 +7,7 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input formControlName="price" matInput placeholder="Price">
+          <input type = "number" formControlName="price" matInput placeholder="Price">
           <mat-error *ngIf="form.get('price').invalid">Please enter price</mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
@@ -23,7 +23,8 @@
         </mat-form-field>
         <div class="image-pick">
           <button mat-stroked-button color="primary" type = "button" (click)="imagePick.click()">Add Image</button>
-          <input type = "file" #imagePick>
+          <input type = "file" #imagePick (change)="onImagePick($event)">
+          <img class = "imagePreview" *ngIf="imagePreview" [src] = "imagePreview" [alt] = "form.value.name">
         </div>
         <button type = "submit" mat-raised-button color="primary">button</button>
       </form>
