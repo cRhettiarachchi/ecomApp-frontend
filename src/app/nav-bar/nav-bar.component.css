@@ -13,13 +13,19 @@ a {
 }
 
 a:hover {
-  font-size: 110%;
+  padding: 0;
+  border-bottom: 1px solid white;
 }
 
 .navbar-items {
-  margin-right: 10px;
+  margin-right: 2%;
 }
 
 .using {
   font-size: 110%;
+}
+
+.logo {
+  width: 70px;
+  margin-right: 20px;
 }

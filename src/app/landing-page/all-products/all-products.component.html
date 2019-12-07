@@ -3,15 +3,16 @@
 <!--    <div class="all-products" >-->
       <div class="col-3 all-products" *ngFor="let product of products">
         <mat-card class="products-card">
-          <img class = "product-image" [src]="product.imagePath" [alt]="product.name">
+          <img *ngIf = "product.imagePath" class = "product-image" [src]="product.imagePath" [alt]="product.name">
+          <img *ngIf="!product.imagePath" src = "assets/image-assets/no-image.png" class = "product-image" alt = "no-Image">
           <mat-card-content>
-            <p>
+            <h3>
               {{product.name}}
-            </p>
+            </h3>
             <p>
-              {{product.price}}
+              Rs. {{product.price}}.00
             </p>
-            <p>
+            <p [ngStyle]="{color: product.condition === 'Used' ? '#00BD32' : '#6E3CDF'}" >
               {{product.condition}}
             </p>
           </mat-card-content>
