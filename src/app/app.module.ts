@@ -41,6 +41,7 @@ import { SignInComponent } from './authentication/sign-in/sign-in.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatToolbarModule,
@@ -53,7 +54,6 @@ import { SignInComponent } from './authentication/sign-in/sign-in.component';
     MatSelectModule,
     MatButtonModule,
     MatMenuModule,
-    FormsModule,
     MatCheckboxModule
   ],
   providers: [],

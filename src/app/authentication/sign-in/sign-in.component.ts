@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Form} from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,6 +15,10 @@ export class SignInComponent implements OnInit {
     this.isChecked = event.checked;
     console.log(typeof(event));
     console.log(this.isChecked);
+  }
+
+  onSubmit(form: Form) {
+    console.log(form);
   }
 
   ngOnInit() {

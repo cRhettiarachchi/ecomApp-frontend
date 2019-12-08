@@ -1,43 +1,50 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 m-auto sign-up-form">
-      <form>
+      <form (submit)="onSubmit(signInForm)" #signInForm="ngForm">
         <h2>Sign up</h2>
         <mat-form-field class="full-width">
-          <input type="email" matInput placeholder="Email">
-          <!--            <mat-error *ngIf="form.get('name').invalid">Please insert a valid name</mat-error>-->
+          <input name="email" ngModel #email="ngModel" type="email" matInput placeholder="Email" required email>
+          <mat-error *ngIf="email.hasError('email')">Please insert a valid email</mat-error>
+          <mat-error *ngIf="email.hasError('required')">Please enter the email</mat-error>
         </mat-form-field>
         <mat-form-field class="full-width">
-          <input type="text" matInput placeholder="Name">
-          <!--            <mat-error *ngIf="form.get('name').invalid">Please insert a valid name</mat-error>-->
+          <input ngModel name="name" #name="ngModel" type="text" matInput placeholder="Name" required minlength="3">
+          <mat-error *ngIf="name.hasError('required')">Please enter your name</mat-error>
+          <mat-error *ngIf="name.hasError('minlength')">Please insert a valid name</mat-error>
         </mat-form-field>
-        <mat-form-field class = "inline-form">
-          <input type="date" matInput placeholder="Enter Birthday">
-          <!--            <mat-error *ngIf="form.get('name').invalid">Please insert a valid name</mat-error>-->
+        <mat-form-field class="inline-form">
+          <input ngModel name = "date" #date = "ngModel" type="date" matInput placeholder="Enter Birthday" required>
+          <mat-error *ngIf="date.invalid">Please enter your birthday</mat-error>
         </mat-form-field>
-        <mat-form-field class = "inline-form">
+        <mat-form-field class="inline-form">
           <mat-label>Gender</mat-label>
-          <mat-select>
+          <mat-select ngModel name = "gender" #gender = "ngModel" required>
             <mat-option value="Male">Male</mat-option>
             <mat-option value="Female">Female</mat-option>
           </mat-select>
         </mat-form-field>
 
         <mat-form-field class="full-width">
-          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <input name = "password" ngModel #password = ngModel matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" required minlength="8">
+          <a mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
+          </a>
+          <mat-error *ngIf="password.hasError('required')">Please enter a password</mat-error>
+          <mat-error *ngIf="password.hasError('minlength')">Password must contain at least 8 characters</mat-error>
         </mat-form-field>
 
         <mat-form-field class="full-width">
-          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
+          <input name = "cPassword" ngModel #cPassword = ngModel matInput placeholder="Enter your password" [type]="confirmHide ? 'password' : 'text'" required minlength="8">
+          <a mat-icon-button matSuffix (click)="confirmHide = !confirmHide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="confirmHide">
+            <mat-icon>{{confirmHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </a>
+          <mat-error *ngIf="cPassword.hasError('required')">Please enter a password</mat-error>
         </mat-form-field>
 
-        <button mat-button class = "sign-up-button">Sign up</button>
+        <button type = "submit" mat-button class="sign-up-button">Sign up</button>
       </form>
     </div>
   </div>
