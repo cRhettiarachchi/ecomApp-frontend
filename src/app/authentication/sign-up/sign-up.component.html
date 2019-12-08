@@ -1,1 +1,44 @@
-<p>sign-up works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 m-auto sign-up-form">
+      <form>
+        <h2>Sign up</h2>
+        <mat-form-field class="full-width">
+          <input type="email" matInput placeholder="Email">
+          <!--            <mat-error *ngIf="form.get('name').invalid">Please insert a valid name</mat-error>-->
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input type="text" matInput placeholder="Name">
+          <!--            <mat-error *ngIf="form.get('name').invalid">Please insert a valid name</mat-error>-->
+        </mat-form-field>
+        <mat-form-field class = "inline-form">
+          <input type="date" matInput placeholder="Enter Birthday">
+          <!--            <mat-error *ngIf="form.get('name').invalid">Please insert a valid name</mat-error>-->
+        </mat-form-field>
+        <mat-form-field class = "inline-form">
+          <mat-label>Gender</mat-label>
+          <mat-select>
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <button mat-button class = "sign-up-button">Sign up</button>
+      </form>
+    </div>
+  </div>
+</div>

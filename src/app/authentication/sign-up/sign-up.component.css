@@ -1,0 +1,25 @@
+.sign-up-form {
+  border: 1px solid #95a5a6;
+  border-radius: 5px;
+  top: 60px;
+  padding: 5%
+}
+
+.full-width {
+  display: block;
+  width: 100%;
+}
+
+.sign-up-button {
+  background-color: #3785DC;
+  color: white;
+}
+
+.inline-form {
+  width: 40%;
+  margin-right: 5%;
+}
+
+.sign-up-button:hover {
+  background-color: #4093f6;
+}

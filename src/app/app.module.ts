@@ -9,7 +9,7 @@ import { AllProductsComponent } from './landing-page/all-products/all-products.c
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatBadgeModule, MatButtonModule,
-  MatCardModule,
+  MatCardModule, MatCheckboxModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule, MatMenuModule,
@@ -53,7 +53,8 @@ import { SignInComponent } from './authentication/sign-in/sign-in.component';
     MatSelectModule,
     MatButtonModule,
     MatMenuModule,
-    FormsModule
+    FormsModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
