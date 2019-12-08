@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
 import {ProductService} from '../../services/product.service';
 
 @Component({
@@ -23,7 +23,7 @@ export class CreateProductsComponent implements OnInit {
     });
   }
 
-  onSavePost() {
+  onSavePost(formGroup: FormGroupDirective) {
     if (this.form.invalid) {
       return;
     }
@@ -32,6 +32,9 @@ export class CreateProductsComponent implements OnInit {
       this.form.value.category,
       this.form.value.condition,
       this.form.value.image);
+    this.form.reset();
+    formGroup.resetForm();
+    this.imagePreview = null;
   }
   onImagePick(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];

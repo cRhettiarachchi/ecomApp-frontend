@@ -9,7 +9,7 @@
     <img src="/assets/image-assets/ecom-app.png" alt="ecom-app-logo" class = "logo">
   </div>
   <div class="col-md-9">
-    <form [formGroup]="form" (submit)="onSavePost()" class="example-form">
+    <form [formGroup]="form" (submit)="onSavePost(formGruop)" class="example-form" #formGruop="ngForm">
       <mat-form-field class="example-full-width">
         <input formControlName="name" matInput placeholder="Product Name">
         <mat-error *ngIf="form.get('name').invalid">Please insert a valid name</mat-error>

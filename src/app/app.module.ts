@@ -20,8 +20,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { SidePanelComponent } from './dashboard/side-panel/side-panel.component';
 import { CreateProductsComponent } from './dashboard/create-products/create-products.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import { SignUpComponent } from './authentication/sign-up/sign-up.component';
+import { SignInComponent } from './authentication/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { FooterComponent } from './footer/footer.component';
     SidePanelComponent,
     CreateProductsComponent,
     DashboardComponent,
-    FooterComponent
+    FooterComponent,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ import { FooterComponent } from './footer/footer.component';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
