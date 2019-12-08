@@ -12,7 +12,7 @@ import {
   MatCardModule,
   MatFormFieldModule,
   MatIconModule,
-  MatInputModule,
+  MatInputModule, MatMenuModule,
   MatSelectModule,
   MatToolbarModule
 } from '@angular/material';
@@ -21,6 +21,7 @@ import { SidePanelComponent } from './dashboard/side-panel/side-panel.component'
 import { CreateProductsComponent } from './dashboard/create-products/create-products.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     AllProductsComponent,
     SidePanelComponent,
     CreateProductsComponent,
-    DashboardComponent
+    DashboardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

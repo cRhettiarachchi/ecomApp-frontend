@@ -8,5 +8,10 @@
       Example with a home icon with overlaid badge showing the number 15
     </span>
   <a class = "navbar-items" [routerLinkActiveOptions]="{exact: true}" routerLink="/" routerLinkActive="using">Home</a>
-  <a class = "navbar-items" routerLink="/dashboard" routerLinkActive="using">Dashboard</a>
+  <button mat-button [matMenuTriggerFor]="menu">Your Account</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>All Products</button>
+    <button mat-menu-item routerLink="/dashboard">Add Product</button>
+  </mat-menu>
+<!--  <a class = "navbar-items" routerLink="/dashboard" routerLinkActive="using">Dashboard</a>-->
 </mat-toolbar>

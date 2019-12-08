@@ -1,0 +1,39 @@
+.footer {
+  margin-top: 10%;
+  background-color: #0852A5;
+  font-size: 80%
+}
+
+ul {
+  width: 50%;
+  margin: auto;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+p {
+  color: white;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+a {
+  color: #e0e0e0;
+}
+
+.footer-heading {
+  color: white;
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+.app-name {
+  padding: 4% 0 2% 0;
+}
+
+.footer-links {
+  border-bottom: 1px solid white;
+  padding-bottom: 1%;
+}

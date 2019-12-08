@@ -10,6 +10,7 @@ import {map} from 'rxjs/operators';
 export class ProductService {
   private products: ProductModel[] = [];
   private productSubject = new Subject<ProductModel[]>();
+  private loadingSubject = new Subject<boolean>();
   private url = 'http://localhost:8080/products';
   constructor(private http: HttpClient) { }
 
@@ -37,11 +38,16 @@ export class ProductService {
       .subscribe(products => {
       this.products = products;
       this.productSubject.next([...this.products]);
+      this.loadingSubject.next(false);
     });
   }
 
   getProductsSubject(): Observable<ProductModel[]> {
     return this.productSubject;
+  }
+
+  getLoadingSubject(): Observable<boolean> {
+    return this.loadingSubject.asObservable();
   }
 
   createProduct(name: string, price: number, category: string, condition: string, image: File) {
